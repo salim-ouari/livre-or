@@ -69,7 +69,7 @@ if (
                     <tr>
 
                         <td>Confirmer mot de passe</td>
-                        <td><input type="password" name="password_confirm" placeholder="Ex : *****" required></td>
+                        <td><input type="password" name="password_confirm" placeholder="Ex : *****"></td>
                     </tr>
 
                 </table>
