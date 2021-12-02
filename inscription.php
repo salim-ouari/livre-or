@@ -49,9 +49,9 @@ if (
 <body>
 
     <header>
-        <h1 id="ac">INSCRIPTION</p>
+        <?php include 'header.php'; ?>
     </header>
-
+    <h1 id="ac">INSCRIPTION</h1>
     <main>
         <div id="myid">
             <form class="form" action="inscription.php" method="post">
