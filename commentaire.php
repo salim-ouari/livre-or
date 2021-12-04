@@ -5,24 +5,31 @@ commentaires. -->
 
 <?php
 session_start();
+// connecte toi à la bdd
+require('connect.php');
 $error = '';
 
-require('connect.php');
+if (isset($_POST['commentaire'])) {
+    $comment = $_POST['commentaire'];
+    date_default_timezone_set('Europe/Paris');
+    $date = date('Y-m-d H:i:s');
+    $id = $_SESSION['utilisateurs']['id'];
+    $requete = mysqli_query($bdd, "INSERT INTO commentaires(commentaire, id_utilisateur, date) VALUES ('$comment', '$id', '$date')");
+}
 
 if (isset($_POST['submit'])) { // Si on presse sur le bouton commenter
-    $name = $_POST['name']; // obtenir le nom du formulaire
-    $email = $_POST['email'];
-    $comment = $_POST['comment'];
 
-    $requete = "INSERT INTO comments (name, email, comment)
-			VALUES ('$name', '$email', '$comment')";
-    $resultat = mysqli_query($bdd, $requete);
-    if ($resultat) {
-        echo $error = 'commentaire ajouté avec succés';
-    } else {
-        echo $error = "le commentaire n'a pas été ajouté";
-    }
+    header('Location: livre-or.php');
+
+    $comment = htmlspecialchars($_POST['comment']);
 }
+if (empty($_SESSION)) {
+    header('Location: index.php');
+    exit();
+}
+
+
+//  alors insére le com dans la base de donnée
 
 ?>
 
@@ -39,47 +46,20 @@ if (isset($_POST['submit'])) { // Si on presse sur le bouton commenter
 </head>
 
 <body>
+    <?php include 'header.php'; ?>
+
     <div class="wrapper">
         <form action="" method="POST" class="form">
             <div class="row">
-                <div class="input-group">
-                    <label for="name">Name</label>
-                    <input type="text" name="name" id="name" placeholder="Enter your Name" required>
+                <div class="input-group textarea">
+                    <label for="comment">Votre commentaire</label>
+                    <textarea id="comment" name="comment" placeholder="" required></textarea>
                 </div>
                 <div class="input-group">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email" placeholder="Enter your Email" required>
+                    <button name="submit" class="btn">Poster commentaire</button>
                 </div>
-            </div>
-            <div class="input-group textarea">
-                <label for="comment">commentaire</label>
-                <textarea id="comment" name="comment" placeholder="Enter your Comment" required></textarea>
-            </div>
-            <div class="input-group">
-                <button name="submit" class="btn">Poster commentaire</button>
-            </div>
         </form>
-        <div class="prev-comments">
-            <?php
 
-            $requete2 = "SELECT * FROM comments";
-            $resultat2 = mysqli_query($bdd, $requete2);
-            if (mysqli_num_rows($resultat2) != 0) {
-                while ($user = mysqli_fetch_assoc($resultat2)) {
-
-            ?>
-                    <div class="single-item">
-                        <h4><?php echo $row['name']; ?></h4>
-                        <a href="mailto:<?php echo $user['email']; ?>"><?php echo $user['email']; ?></a>
-                        <p><?php echo $user['comment']; ?></p>
-                    </div>
-            <?php
-
-                }
-            }
-
-            ?>
-        </div>
     </div>
 </body>
 
