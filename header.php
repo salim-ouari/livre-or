@@ -1,16 +1,18 @@
 <header>
-    <nav>
-        <ul>
-            <li><a href="index.php">Login</a></li>
-            <li><a href="inscription.php">Inscription</a></li>
-            <?php
-            /* Condition if qui permet de se deconnecter */
-            if (isset($_POST['deconnexion'])) {
+    <h1>Mon Livre d'or</h1>
+    <ul>
+        <li><a href="index.php">Accueil</a></li>
+        <li><a href="livre-or.php">Livre d'or</a></li>
+        <?php
+        if (empty($_SESSION)) {
+            echo '<li><a href="index.php">Inscription</a></li>
+     <li><a href="index.php">Inscription</a></li>';
+        } else {
+            echo '<li><a href="commentaire.php">Commentaire</a></li>
+    <li><a href="profil.php">Mon profil</a></li>
+    <li><a href="deconnexion.php">Deconnexion</a></li>';
+        }
 
-                session_destroy();
-                header('location: index.php');
-            }
-            ?>
-        </ul>
-    </nav>
+        ?>
+    </ul>
 </header>
