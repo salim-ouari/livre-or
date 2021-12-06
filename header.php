@@ -1,18 +1,22 @@
 <header>
-    <h1>Mon Livre d'or</h1>
-    <ul>
-        <li><a href="index.php">Accueil</a></li>
-        <li><a href="livre-or.php">Livre d'or</a></li>
-        <?php
-        if (empty($_SESSION)) {
-            echo '<li><a href="index.php">Inscription</a></li>
-     <li><a href="index.php">Inscription</a></li>';
-        } else {
-            echo '<li><a href="commentaire.php">Commentaire</a></li>
-    <li><a href="profil.php">Mon profil</a></li>
-    <li><a href="deconnexion.php">Deconnexion</a></li>';
-        }
+    <nav>
+        <h1>Mon Livre d'or</h1>
+        <ul>
+            <li><a href="index.php">Accueil</a></li>
+            <li><a href="livre-or.php">Livre d'or</a></li>
+            <?php
+            if (empty($_SESSION)) {
+            ?>
+                <li><a href="inscription.php">Inscription</a></li>
+                <li><a href="connexion.php">Connexion</a></li>
 
-        ?>
-    </ul>
+            <?php } else { ?>
+
+                <li><a href="commentaire.php">Commentaire</a></li>
+                <li><a href="profil.php">Mon profil</a></li>
+                <li><a href="index.php">Deconnexion</a></li>';
+            <?php  } ?>
+
+        </ul>
+    </nav>
 </header>
