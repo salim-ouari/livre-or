@@ -68,8 +68,9 @@ if (isset($_POST['modif'])) {
 
 <body>
     <header>
-        <h1 id="ac">PROFIL</h1>
+        <?php include 'header.php'; ?>
     </header>
+    <h1 id="ac">PROFIL</h1>
     <main>
         <div id="myid">
             <form class="form" action="profil.php" method="post">
