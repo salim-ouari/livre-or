@@ -14,8 +14,10 @@
 
                 <li><a href="commentaire.php">Commentaire</a></li>
                 <li><a href="profil.php">Mon profil</a></li>
-                <li><a href="index.php">Deconnexion</a></li>';
+
             <?php  } ?>
+
+
 
         </ul>
     </nav>
