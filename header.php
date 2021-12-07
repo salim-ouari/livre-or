@@ -1,6 +1,12 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
 <header>
+    <div id="h1">
+        <h1>MON LIVRE D'OR</h1>
+    </div>
+
     <nav>
-        <h1>Mon Livre d'or</h1>
+
         <ul>
             <li><a href="index.php">Accueil</a></li>
             <li><a href="livre-or.php">Livre d'or</a></li>
@@ -16,8 +22,6 @@
                 <li><a href="profil.php">Mon profil</a></li>
 
             <?php  } ?>
-
-
 
         </ul>
     </nav>
