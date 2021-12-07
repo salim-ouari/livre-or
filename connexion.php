@@ -19,16 +19,7 @@ if (isset($_POST['connexion'])) {
 
             $_SESSION['user'] = $resultat;
             header('location: profil.php');
-        }
-
-        // if ($password == 'admin' && $password == $resultat['password']) {
-
-        //     $_SESSION['admin'] = $resultat;
-        //     header('location: admin.php');
-        // }
-        // on ouvre la session avec $_SESSION:
-
-        else {
+        } else {
 
             $error = "Le pseudo ou le mot de passe est incorrect, le compte n'a pas été trouvé.";
         }
@@ -51,7 +42,7 @@ if (isset($_POST['connexion'])) {
 
 <body>
     <header>
-
+        <?php include 'header.php'; ?>
     </header>
 
     <h1 id="ac">CONNEXION</h1>
