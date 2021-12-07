@@ -5,7 +5,7 @@ commentaires. -->
 
 <?php
 session_start();
-var_dump($_SESSION['user']['id']);
+// var_dump($_SESSION['user']['id']);
 
 /* Condition if qui permet de se deconnecter */
 if (isset($_POST['deconnexion'])) {
@@ -32,14 +32,7 @@ if (isset($_POST['submit'])) {
     }
 }
 
-
-
-
 ?>
-
-<!-- // alors insére le com dans la base de donnée -->
-
-
 
 <!DOCTYPE html>
 <html>
@@ -70,7 +63,7 @@ if (isset($_POST['submit'])) {
         </form>
     </div>
     <form class="deco" action="" method="post"><button type="submit" name="deconnexion">Déconnexion</button></form>
-
+    <?php include 'footer.php'; ?>
 </body>
 
 </html>
