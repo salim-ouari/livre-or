@@ -4,6 +4,12 @@ récent au plus ancien. Chaque commentaire doit être composé d’un texte
 l’utilisateur est connecté, sur cette page figure également un lien vers la
 page d’ajout de commentaire. -->
 
+<?php
+session_start();
+// **************connection à la BDD*******************
+require('connect.php');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,42 +24,33 @@ page d’ajout de commentaire. -->
 <body>
 
 </body>
-<?php include 'header.php'; ?>
-
+<header>
+    <?php include 'header.php'; ?>
+</header>
 <main>
-    <?php
-    // **************connection à la BDD*******************
-    require('connect.php');
+    <table>
+        <?php
+        $requete = mysqli_query($bdd, "SELECT * FROM commentaires INNER JOIN utilisateurs WHERE utilisateurs.id = commentaires.id_utilisateur
+        ORDER BY commentaires.date DESC");
+        $commentaires = mysqli_fetch_all($requete);
 
-    $requete = mysqli_query($bdd, "SELECT * FROM utilisateurs INNER JOIN 'commentaires' WHERE 'utilisateurs.id' = 'commentaires.id_utlisateur' ORDER BY 
-'commentaires.date' DESC");
+        // requete qui permet de recup le login associer au commentaire posté
+        $requete2 = mysqli_query($bdd, "SELECT login FROM utilisateurs INNER JOIN commentaires WHERE
+         commentaires.id_utilisateur = utilisateurs.id");
+        $login = mysqli_fetch_assoc($requete2);
 
-    $comment = mysqli_fetch_all($requete, MYSQLI_ASSOC);
+        // var_dump($commentaires);
+        // var_dump($requete);
 
-    foreach ($comment as $key => $value) {
-        echo    '<div id = "table">
-                    <table>
-                    <thead>
-                    <tr>
-                        <th>' . $value['login'] . '</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <td>' . $value['commentaire'] . ' ' . 'Poster le ' . ' ' . date_format(date_create($value['date']), 'd/m/Y H:i:s') . '</td>
-                    </tbody>
-                    </table>
-            </div>';
-    }
-    if (empty($_SESSION)) {
-        echo '  <div class="centre">
-                        <a href="connexion.php"><input id ="livre" type="submit" name= submit value="connecter vous ou inscrivez-vous pour poster un commentaires"></a>
-                    </div>';
-    } else {
-        echo   '<div class="centre">
-                        <a href="commentaire.php"><input id ="livre" type="submit" name= submit value="Poster un commentaires"></a>
-                    </div>';
-    }
-    ?>
+        foreach ($commentaires as $com) : ?>
+            <tr>
+                <td><span>Posté par:</span> <?= $login['login']; ?></td>
+                <td><span>le</span> <?= $com[3]; ?></td>
+                <td><?= $com[1]; ?></td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
 </main>
+<?php include 'footer.php'; ?>
 
 </html>
