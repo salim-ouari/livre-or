@@ -13,6 +13,13 @@
     <header>
         <?php include 'header.php'; ?>
     </header>
+    <main>
+
+
+    </main>
+
+    <?php include 'footer.php'; ?>
+
 </body>
 
 </html>
