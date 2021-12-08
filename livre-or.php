@@ -27,29 +27,34 @@ require('connect.php');
 <header>
     <?php include 'header.php'; ?>
 </header>
-<main>
-    <table>
-        <?php
-        $requete = mysqli_query($bdd, "SELECT * FROM commentaires INNER JOIN utilisateurs WHERE utilisateurs.id = commentaires.id_utilisateur
+<main class="container">
+
+
+    <?php
+    $requete = mysqli_query($bdd, "SELECT * FROM commentaires INNER JOIN utilisateurs WHERE utilisateurs.id = commentaires.id_utilisateur
         ORDER BY commentaires.date DESC");
-        $commentaires = mysqli_fetch_all($requete);
+    $commentaires = mysqli_fetch_all($requete);
 
-        // requete qui permet de recup le login associer au commentaire posté
-        $requete2 = mysqli_query($bdd, "SELECT login FROM utilisateurs INNER JOIN commentaires WHERE
+    // requete qui permet de recup le login associer au commentaire posté
+    $requete2 = mysqli_query($bdd, "SELECT login FROM utilisateurs INNER JOIN commentaires WHERE
          commentaires.id_utilisateur = utilisateurs.id");
-        $login = mysqli_fetch_assoc($requete2);
+    $login = mysqli_fetch_assoc($requete2);
 
-        // var_dump($commentaires);
-        // var_dump($requete);
+    // var_dump($commentaires);
+    // var_dump($requete);
+    // var_dump($requete2);
+    // var_dump($login);
 
-        foreach ($commentaires as $com) : ?>
-            <tr>
-                <td><span>Posté par:</span> <?= $login['login']; ?></td>
-                <td><span>le</span> <?= $com[3]; ?></td>
-                <td><?= $com[1]; ?></td>
-            </tr>
+    foreach ($commentaires as $com) : ?>
+        <div class="comments">
+            <p class="livre"><?= $com[1]; ?></p>
+            <span>
+                Posté par: <?= $com[5]; ?></span>
+
+            <span> le <?= $com[3]; ?></span>
+
         <?php endforeach; ?>
-    </table>
+
 </main>
 <?php include 'footer.php'; ?>
 
