@@ -51,8 +51,9 @@ if (
     <header>
         <?php include 'header.php'; ?>
     </header>
-    <h1 id="ac">INSCRIPTION</h1>
+
     <main>
+        <h1 id="ac">INSCRIPTION</h1>
         <div id="myid">
             <form class="form" action="inscription.php" method="post">
                 <table>
