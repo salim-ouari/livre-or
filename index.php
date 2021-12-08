@@ -1,3 +1,18 @@
+<?php
+session_start();
+$error = "";
+
+// /* Condition if qui permet de se deconnecter */
+// if (isset($_POST['deconnexion'])) {
+
+//     session_destroy();
+//     header('location: index.php');
+// }
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +29,7 @@
         <?php include 'header.php'; ?>
     </header>
     <main>
-
+        <img src="asset/undraw_world_9iqb.png" alt="image">
 
     </main>
 
