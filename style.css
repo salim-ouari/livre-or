@@ -1,13 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Advent+Pro&family=Dancing+Script&display=swap");
-
-html {
-  /* font-family: Arial, Helvetica, sans-serif; */
-}
-
 body {
   padding: 0;
   margin: 0;
 }
+
 /* ******************HEADER****************************** */
 header {
   justify-content: space-between;
@@ -17,6 +12,40 @@ header {
   height: 150px;
   background-color: #cecece;
 }
+header {
+  -webkit-animation: color-change-4x 6s linear infinite alternate both;
+  animation: color-change-4x 6s linear infinite alternate both;
+}
+
+@-webkit-keyframes color-change-4x {
+  0% {
+    background: #19dcea;
+  }
+  33.3333% {
+    background: #b22cff;
+  }
+  66.666% {
+    background: #ea2222;
+  }
+  100% {
+    background: #f5be10;
+  }
+}
+@keyframes color-change-4x {
+  0% {
+    background: #19dcea;
+  }
+  33.3333% {
+    background: #b22cff;
+  }
+  66.666% {
+    background: #ea2222;
+  }
+  100% {
+    background: #f5be10;
+  }
+}
+
 nav {
   display: flex;
 }
@@ -37,24 +66,29 @@ nav ul a {
   border-radius: 20px;
   width: auto;
   padding: 5px 20px;
-  background-color: orange;
+  background-color: rgb(194, 193, 192);
   line-height: 25px;
   text-align: center;
-  color: white;
+  color: rgb(27, 22, 22);
   text-decoration: none;
+  font-family: "Bebas Neue", cursive;
 }
 nav ul a:hover {
   color: white;
   background-color: grey;
+  font-family: "Bebas Neue", cursive;
 }
 
-.h1 {
+#title {
   text-align: center;
-  font-family: "dancing Script", cursive;
+  font-family: "Bebas Neue", cursive;
+  font-size: 3.2em;
 }
 
 /* **************PROFIL CONNEXION et INSCRIPTION FORM*************** */
-
+#ac {
+  text-align: center;
+}
 #myid {
   text-align: center;
 }
@@ -135,8 +169,28 @@ a:hover {
 .lorem {
   color: transparent;
 }
+
+/* **********LIVRE D'OR*************************** */
+.container {
+  display: flex;
+  justify-content: center;
+}
+.comments {
+  display: block;
+  width: 200px;
+  text-align: center;
+}
+.livre {
+  align-items: center;
+  padding: 20px;
+  background: #8383aa;
+  color: #ecf0f1;
+  font-family: "Courier New", Courier, monospace;
+  font-style: italic;
+}
+
 /* **************$ERROR***************** */
-p {
+.error {
   text-align: center;
   color: red;
   font-weight: bold;
@@ -160,14 +214,14 @@ p {
 }
 
 footer {
-  background-color: rgba(247, 247, 247, 0.596);
-  backdrop-filter: blur(3px);
+  background-color: rgba(164, 168, 180, 0.596);
+  /* backdrop-filter: blur(3px); */
   height: 230px;
   display: grid;
   grid-template-columns: repeat(3);
 }
 .h1foot {
-  color: #fff;
+  color: rgb(15, 15, 15);
   font-size: 45px;
   text-align: center;
 }
@@ -175,5 +229,5 @@ footer {
   text-align: center;
   font-weight: bold;
   margin-top: 40px auto;
-  color: #777;
+  color: rgb(3, 3, 3);
 }
