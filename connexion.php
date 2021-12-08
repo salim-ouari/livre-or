@@ -67,7 +67,7 @@ if (isset($_POST['connexion'])) {
                     <button type="submit" name="connexion">Connexion</button>
                 </div>
             </form>
-            <p>
+            <p class="error">
                 <?php echo $error;   ?></p>
         </div>
         <p class="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam mollitia consectetur maxime, tempore consequatur impedit.
