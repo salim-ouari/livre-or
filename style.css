@@ -61,7 +61,8 @@ li a {
   padding: 18px 16px;
 }
 
-nav ul a {
+nav ul a,
+#navdeco {
   margin: 0 10px;
   border-radius: 20px;
   width: auto;
@@ -72,7 +73,19 @@ nav ul a {
   color: rgb(27, 22, 22);
   text-decoration: none;
   font-family: "Bebas Neue", cursive;
+  font-size: 1.1em;
 }
+
+#navdeco {
+  display: flex;
+}
+
+#navdeco:hover {
+  color: white;
+  background-color: grey;
+  font-family: "Bebas Neue", cursive;
+}
+
 nav ul a:hover {
   color: white;
   background-color: grey;
@@ -108,6 +121,7 @@ h2 {
   border: 2px solid rgb(5, 7, 8);
   text-align: left;
   display: inline-block;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 input {
@@ -126,21 +140,12 @@ input {
 
 button[type="submit"] {
   cursor: pointer;
-  background-color: rgb(189, 168, 53);
+  background-color: rgb(106, 233, 129);
   transition: 0.4s;
 }
 button[type="submit"]:hover {
   background: rgb(203, 212, 212);
   color: rgb(0, 0, 0);
-}
-
-.deco {
-  margin-top: 20px;
-}
-
-.butto {
-  display: flex;
-  justify-content: space-between;
 }
 
 button {
@@ -150,12 +155,11 @@ button {
   padding: 10px 20px;
   border-radius: 150px;
   margin: 0 auto;
-
   transition: 0.4s;
 }
-button:hover {
+/* button:hover {
   letter-spacing: 3px;
-}
+} */
 button:active {
   transform: scale(1.2);
 }
@@ -189,6 +193,105 @@ a:hover {
   font-style: italic;
 }
 
+/* *****************COMMENTAIRES********************** */
+.main-com {
+  display: flex;
+}
+
+#imgcom {
+  display: flex;
+  height: 400px;
+  margin-top: 10%;
+}
+
+.container {
+  display: block;
+  align-items: center;
+  width: 50%;
+  border: 1px solid rgb(202, 202, 202);
+  border-radius: 8px;
+  /* margin-left: 25%;
+  margin: right 25%; */
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.container > h1 {
+  font-weight: 500;
+  text-align: center;
+}
+
+#postcom {
+  text-align: center;
+  font-style: italic;
+  color: gray;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+form div {
+  width: 80%;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  min-height: 83px;
+}
+
+form div > label {
+  margin-bottom: 7px;
+  font-weight: 600;
+}
+
+.bloc-com {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+form div > textarea {
+  background: rgb(106, 233, 129);
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: Montserrat, "sans-serif";
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+}
+
+form div > textarea {
+  height: 195px;
+  resize: none;
+}
+
+form div > textarea::placeholder {
+  color: white;
+}
+
+.poster {
+  display: flex;
+  padding: 20px;
+  justify-content: center;
+}
+
+#comm {
+  margin-right: 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  width: 450px;
+  max-width: 500px;
+  height: 60px;
+  font-size: 28px;
+  background: rgb(203, 212, 212);
+  border: rgba(48, 48, 48, 0.5) solid 1px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  color: #303030;
+  transition: 0.4s;
+}
+
+#comm:hover {
+  background: rgb(126, 226, 145);
+  color: rgb(0, 0, 0);
+}
+
 /* **************$ERROR***************** */
 .error {
   text-align: center;
@@ -200,8 +303,6 @@ a:hover {
 
 #icons a {
   margin: 0 15px;
-  font-size: 1.3em;
-  margin-top: 10%;
 }
 
 #icons {
@@ -215,8 +316,7 @@ a:hover {
 
 footer {
   background-color: rgba(164, 168, 180, 0.596);
-  /* backdrop-filter: blur(3px); */
-  height: 230px;
+  height: 250px;
   display: grid;
   grid-template-columns: repeat(3);
 }
@@ -224,6 +324,7 @@ footer {
   color: rgb(15, 15, 15);
   font-size: 45px;
   text-align: center;
+  font-family: "Bebas Neue", cursive;
 }
 .copyright {
   text-align: center;
