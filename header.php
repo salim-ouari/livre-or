@@ -1,8 +1,11 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Gwendolyn:wght@700&display=swap" rel="stylesheet">
 
 <header>
-    <div id="h1">
-        <h1>MON LIVRE D'OR</h1>
+    <div>
+        <h1 id="title">MON LIVRE D'OR</h1>
     </div>
 
     <nav>
@@ -20,9 +23,19 @@
 
                 <li><a href="commentaire.php">Commentaire</a></li>
                 <li><a href="profil.php">Mon profil</a></li>
+                <form action="" method="post"><button type="submit" id="navdeco" name="deconnexion">Déconnexion</button></form>
 
-            <?php  } ?>
+            <?php  }
+
+            /* Condition if qui permet de se deconnecter */
+            if (isset($_POST['deconnexion'])) {
+
+                session_destroy();
+                header('location: index.php');
+            }
+            ?>
 
         </ul>
+
     </nav>
 </header>
