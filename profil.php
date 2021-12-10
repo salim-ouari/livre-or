@@ -7,13 +7,6 @@ informations qui sont actuellement stockées en base
 session_start();
 $error = "";
 
-/* Condition if qui permet de se deconnecter */
-if (isset($_POST['deconnexion'])) {
-
-    session_destroy();
-    header('location: index.php');
-}
-
 require('connect.php');
 
 //si jappuie sur le bouton modif => je rentre dans la condition
@@ -97,12 +90,13 @@ if (isset($_POST['modif'])) {
                 </div>
             </form>
 
-            <form class="deco" action="" method="post"><button type="submit" name="deconnexion">Déconnexion</button></form>
+
         </div>
         <p>
             <?php echo $error; ?>
         </p>
     </main>
+    <?php include 'footer.php'; ?>
 </body>
 
 </html>
