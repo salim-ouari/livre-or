@@ -7,13 +7,6 @@ commentaires. -->
 session_start();
 // var_dump($_SESSION['user']['id']);
 
-/* Condition if qui permet de se deconnecter */
-if (isset($_POST['deconnexion'])) {
-
-    session_destroy();
-    header('location: index.php');
-}
-
 // connecte toi à la bdd
 require('connect.php');
 $error = '';
@@ -50,19 +43,25 @@ if (isset($_POST['submit'])) {
     <header>
         <?php include 'header.php'; ?>
     </header>
-    <div class="wrapper">
-        <form action="" method="POST" class="form">
-            <div class="row">
-                <div class="input-group textarea">
-                    <label for="comment">Votre commentaire</label>
-                    <textarea id="comment" name="comment" placeholder="Tapez ici votre commentaire..." required></textarea>
+    <main class="main-com">
+
+        <img id="imgcom" src="asset/undraw_Super_thank_you_re_f8bo.png" alt="illustration">
+
+        <div class="container">
+            <h1>POST UN COM !!!</h1>
+            <p id="postcom">Envie de nous envoyer un message d’amour ? N’hésitez pas à utiliser ce formulaire pour poster un commentaire qui apparaîtra sur le livre d'or !</p>
+            <form action="" method="post">
+
+                <div class="bloc-com">
+                    <label for="comment">Votre Commentaire</label>
+                    <textarea id="message" name="comment" placeholder="Ecrivez ici..." required></textarea>
                 </div>
-                <div class="input-group">
-                    <button name="submit" class="btn">Poster commentaire</button>
+                <div class="poster">
+                    <button type="submit" name="submit" id="comm">Poster</button>
                 </div>
-        </form>
-    </div>
-    <form class="deco" action="" method="post"><button type="submit" name="deconnexion">Déconnexion</button></form>
+            </form>
+        </div>
+    </main>
     <?php include 'footer.php'; ?>
 </body>
 
