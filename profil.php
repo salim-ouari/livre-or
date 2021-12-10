@@ -63,11 +63,11 @@ if (isset($_POST['modif'])) {
     <header>
         <?php include 'header.php'; ?>
     </header>
-    <h1 id="ac">PROFIL</h1>
+    <h1 id="ac"> MON PROFIL</h1>
     <main>
         <div id="myid">
             <form class="form" action="profil.php" method="post">
-                <h2 class="mypro">MON PROFIL</h2>
+                <h2 class="mypro">MODIFIER PROFIL</h2>
                 <table>
                     <tr>
 

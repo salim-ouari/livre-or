@@ -57,33 +57,18 @@ ul {
 li {
   list-style-type: none;
 }
-li a {
-  padding: 18px 16px;
-}
 
-nav ul a,
-#navdeco {
+nav ul a {
   margin: 0 10px;
   border-radius: 20px;
   width: auto;
   padding: 5px 20px;
   background-color: rgb(194, 193, 192);
-  line-height: 25px;
   text-align: center;
   color: rgb(27, 22, 22);
   text-decoration: none;
   font-family: "Bebas Neue", cursive;
   font-size: 1.1em;
-}
-
-#navdeco {
-  display: flex;
-}
-
-#navdeco:hover {
-  color: white;
-  background-color: grey;
-  font-family: "Bebas Neue", cursive;
 }
 
 nav ul a:hover {
@@ -96,6 +81,23 @@ nav ul a:hover {
   text-align: center;
   font-family: "Bebas Neue", cursive;
   font-size: 3.2em;
+}
+
+/***************ACCUEIL****************************/
+.flex {
+  display: flex;
+  justify-content: center;
+}
+.imgacc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+#book2 {
+  margin-bottom: 20px;
 }
 
 /* **************PROFIL CONNEXION et INSCRIPTION FORM*************** */
@@ -134,8 +136,8 @@ input {
 }
 
 #but {
-  text-align: center;
-  margin-top: 10px;
+  margin-top: 5%;
+  margin-left: 8%;
 }
 
 button[type="submit"] {
@@ -144,8 +146,8 @@ button[type="submit"] {
   transition: 0.4s;
 }
 button[type="submit"]:hover {
-  background: rgb(203, 212, 212);
-  color: rgb(0, 0, 0);
+  background: gray;
+  color: white;
 }
 
 button {
@@ -157,9 +159,7 @@ button {
   margin: 0 auto;
   transition: 0.4s;
 }
-/* button:hover {
-  letter-spacing: 3px;
-} */
+
 button:active {
   transform: scale(1.2);
 }
@@ -175,31 +175,36 @@ a:hover {
 }
 
 /* **********LIVRE D'OR*************************** */
-.container {
+
+.tableau {
   display: flex;
   justify-content: center;
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  color: black;
 }
-.comments {
-  display: block;
-  width: 200px;
-  text-align: center;
+.tableau tr:nth-child(odd) {
+  background-color: rgb(106, 233, 129);
+  text-align: left;
 }
-.livre {
-  align-items: center;
-  padding: 20px;
-  background: #8383aa;
-  color: #ecf0f1;
-  font-family: "Courier New", Courier, monospace;
-  font-style: italic;
+.tableau td {
+  padding: 12px 15px;
 }
 
 /* *****************COMMENTAIRES********************** */
 .main-com {
   display: flex;
+  justify-content: space-between;
+}
+
+.container {
+  margin-right: 30%;
 }
 
 #imgcom {
-  display: flex;
   height: 400px;
   margin-top: 10%;
 }
@@ -210,17 +215,15 @@ a:hover {
   width: 50%;
   border: 1px solid rgb(202, 202, 202);
   border-radius: 8px;
-  /* margin-left: 25%;
-  margin: right 25%; */
+  margin-left: 25%;
+  margin: right 25%;
   margin-top: 5%;
   margin-bottom: 5%;
 }
 
-.container > h1 {
-  font-weight: 500;
+.comh1 {
   text-align: center;
 }
-
 #postcom {
   text-align: center;
   font-style: italic;

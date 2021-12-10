@@ -23,16 +23,11 @@
 
                 <li><a href="commentaire.php">Commentaire</a></li>
                 <li><a href="profil.php">Mon profil</a></li>
-                <form action="" method="post"><button type="submit" id="navdeco" name="deconnexion">Déconnexion</button></form>
+                <li><a href="déconnect.php">Déconnexion</a></li>
+
+
 
             <?php  }
-
-            /* Condition if qui permet de se deconnecter */
-            if (isset($_POST['deconnexion'])) {
-
-                session_destroy();
-                header('location: index.php');
-            }
             ?>
 
         </ul>

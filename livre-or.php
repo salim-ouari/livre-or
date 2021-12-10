@@ -27,23 +27,34 @@ require('connect.php');
 <header>
     <?php include 'header.php'; ?>
 </header>
-<main class="container">
+<main class=" tableau">
+    <table>
 
-    <?php
-    $requete = mysqli_query($bdd, "SELECT * FROM commentaires INNER JOIN utilisateurs WHERE utilisateurs.id = commentaires.id_utilisateur
+        <?php
+        $requete = mysqli_query($bdd, "SELECT * FROM commentaires INNER JOIN utilisateurs WHERE utilisateurs.id = commentaires.id_utilisateur
         ORDER BY commentaires.date DESC");
-    $commentaires = mysqli_fetch_all($requete);
+        $commentaires = mysqli_fetch_all($requete);
 
-    foreach ($commentaires as $com) : ?>
-        <div class="comments">
+        foreach ($commentaires as $com) : ?>
 
-            <span>
-                Posté par: <h3><?= $com[5]; ?></h3></span>
+            <tr>
+                <td><span> Posté par:</span>
+                    <h3><?= $com[5]; ?></h3>
+                </td>
 
-            <em><span> le <?= $com[3]; ?></span></em>
-            <p class="livre"><?= $com[1]; ?></p>
 
+                <td><span>le</span>
+                    <em><?= $com[3]; ?></em>
+                </td>
+
+
+                <td> <?= $com[1]; ?></td>
+
+
+            </tr>
         <?php endforeach; ?>
+    </table>
+
 
 </main>
 <?php include 'footer.php'; ?>

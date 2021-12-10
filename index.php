@@ -28,9 +28,12 @@ $error = "";
     <header>
         <?php include 'header.php'; ?>
     </header>
-    <main>
-        <img src="asset/undraw_world_9iqb.png" alt="image">
 
+    <main class="flex">
+        <div class="imgacc">
+            <img id="book" src="asset/A Livre Ouvert.png" alt="book">
+            <img id="book2" src="asset/conifer-book-open.png" alt="image" height="500px">
+        </div>
     </main>
 
     <?php include 'footer.php'; ?>
