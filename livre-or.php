@@ -42,20 +42,14 @@ require('connect.php');
                     <h3><?= $com[5]; ?></h3>
                 </td>
 
-
                 <td><span>le</span>
                     <em><?= $com[3]; ?></em>
                 </td>
 
-
                 <td> <?= $com[1]; ?></td>
-
-
             </tr>
         <?php endforeach; ?>
     </table>
-
-
 </main>
 <?php include 'footer.php'; ?>
 

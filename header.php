@@ -25,8 +25,6 @@
                 <li><a href="profil.php">Mon profil</a></li>
                 <li><a href="déconnect.php">Déconnexion</a></li>
 
-
-
             <?php  }
             ?>
 

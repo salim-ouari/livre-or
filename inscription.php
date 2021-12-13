@@ -17,7 +17,6 @@ if (
     // recupérer la requete "est ce que j'ai un login déjà existant
     $resultat = mysqli_fetch_all($requete2);
 
-
     // si elle me renvoi rien "pas de login existant"
     if (count($resultat) == 0) {
         if ($password == $confirm_password) {

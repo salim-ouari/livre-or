@@ -2,16 +2,7 @@
 session_start();
 $error = "";
 
-// /* Condition if qui permet de se deconnecter */
-// if (isset($_POST['deconnexion'])) {
-
-//     session_destroy();
-//     header('location: index.php');
-// }
-
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
