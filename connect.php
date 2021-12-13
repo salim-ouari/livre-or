@@ -1,7 +1,7 @@
 <?php
 
 // ***********************bdd plesk***********************
-$bdd = mysqli_connect('localhost', 'salim-ouari', "Zidane07@", 'salim-ouari_moduleconnexion');
+$bdd = mysqli_connect('localhost', 'salim-ouari2', "Zidane07@", 'salim-ouari_livre-or');
 
 //   **********************bddlocal***********************
 // $bdd = mysqli_connect('localhost', 'root', '', 'livreor');
